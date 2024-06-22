@@ -1,7 +1,7 @@
 // Audio variables
-var startBells = new Audio("../../assets/audio/bells-start.wav");
-var endBells = new Audio("../../assets/audio/bells-end.wav");
-var pauseBells = new Audio("../../assets/audio/bells-pause.wav");
+var startBells = new Audio("assets/audio/bells-start.wav");
+var endBells = new Audio("assets/audio/bells-end.wav");
+var pauseBells = new Audio("assets/audio/bells-pause.wav");
 
 // Get HTML elements
 var startButton = document.getElementById("start-button");
@@ -77,10 +77,10 @@ for (i = 0; i < coll.length; i++) {
         var expand = this.querySelector(".expand");
         if(content.style.display === "block") {
             content.style.display = "none";
-            expand.src = "../assets/SVG/expand-down.svg"
+            expand.src = "assets/SVG/expand-down.svg"
         } else {
             content.style.display = "block";
-            expand.src = "../assets/SVG/expand-up.svg"
+            expand.src = "assets/SVG/expand-up.svg"
         }
     });
 }
