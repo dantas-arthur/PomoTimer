@@ -1,0 +1,212 @@
+/* Reset all margins and paddings */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body, font-family, font-size and other elements */
+
+body {
+    --color1: #F0F4EF;
+    --color2: #E94F37;
+    --color3: #393E41;
+    background-color: var(--color2);
+    font-family: "Courier Prime", monospace;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+p, h1, h2, hr {
+    color: var(--color1);
+}
+
+hr {
+    width: 90%;
+}
+
+footer {
+    background-color: var(--color1);
+    width: 100%;
+    padding: 1.1em 0;
+    p {
+        color: var(--color3);
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}
+
+/* Top navigator bar and it's elements */
+
+.nav-bar {
+    background-color: var(--color1);
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    padding: 12px 20px;
+}
+
+.nav-button:hover {
+    text-decoration: underline;
+    color: var(--color2);
+    transition: 0.15s ease-in-out;
+}
+
+.open-menu, .close-menu {
+    display: none;
+}
+
+.site-name {
+    font-size: 2rem;
+    color: var(--color3);
+}
+
+.menu {
+    display: flex;
+    margin-left: 50%;
+    li {
+        padding-left: 30px;
+    }
+    a {
+        font-size: 1.5rem;
+    }
+    li, a {
+        display: inline-block;
+        color: var(--color3);
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        letter-spacing: 2px;
+    }
+}
+
+#logo {
+    width: 65px;
+}
+
+#check {
+    display: none;
+}
+
+/* Timer, buttons, text hints and other elements*/
+
+.timer-container {
+    width: 420px;
+    height: 420px;
+    margin: 40px auto;
+    text-align: center;
+    padding-top: 14%;
+}
+
+.circle-container {
+    position: relative;
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    border: solid var(--color1) 8px;
+    border-radius: 100%;
+}
+
+.app-counter-box {
+    position: relative;
+    top: 120px;
+    p {
+        font-size: 5rem;
+        color: var(--color1);
+    }
+}
+
+.timer-button {
+    color: var(--color1);
+    background-color: var(--color2);
+    position: relative;
+    margin: 40% 5% 0% 5%;
+    font-size: 150%;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: none;
+    background-color: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+}
+
+.timer-button:hover {
+    background-color: none;
+    color: var(--color3);
+}
+
+/* About container */
+
+.about-container {
+    display: grid;
+    background-color: var(--color1);
+    margin-top: 25%;
+    padding-bottom: 5%;
+    text-align: center;
+    h1 {
+        padding-top: 5%;
+    }
+    h1, h2 {
+        color: var(--color2);
+    }
+    p {
+        color: var(--color3);
+    }
+    hr {
+        color: var(--color2);
+        margin: 0% 0% 2% 5%;
+    }
+}
+
+.collapsible {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--color2);
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    margin: 1% 0% 1%;
+}
+
+.content {
+    padding: 0 20px;
+    display: none;
+    overflow: hidden;
+}
+
+.faq {
+    text-align: left;
+    margin-left: 10%;
+    p {
+        max-width: 90%;
+        margin: 1% 0% 1%;
+    }
+}
+
+/* Mark */
+
+mark.red {
+    color: var(--color2);
+    background: none;
+    font-weight: bold;
+}
