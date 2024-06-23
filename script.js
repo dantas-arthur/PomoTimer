@@ -5,6 +5,8 @@ var pauseBells = new Audio("assets/audio/bells-pause.wav");
 
 // Get HTML elements
 var startButton = document.getElementById("start-button");
+var shortPause = document.getElementById("short-pause");
+var longPause = document.getElementById("long-pause");
 var session = document.querySelector(".minutes");
 
 var myInterval;
@@ -14,9 +16,19 @@ var totalSeconds = 0;
 // Timer function
 var appTimer = (remainingSeconds = null) => {
     startBells.play();
-    startButton.innerText = "Pause";
+    startButton.innerText = "Pausar";
     
-    var sessionAmount = Number.parseInt(session.textContent);
+    // Seleciona os inputs de minutos e segundos
+    var minutesInput = document.querySelector('.minutes');
+    var secondsInput = document.querySelector('.seconds');
+    var sessionAmount;
+
+    if (!isNaN(minutesInput.value) && minutesInput.value.trim() !== "") {
+        sessionAmount = parseInt(minutesInput.value, 10);
+    } else {
+        sessionAmount = parseInt(minutesInput.placeholder, 10);
+    }
+
     if (remainingSeconds !== null) {
         totalSeconds = remainingSeconds;
     } else {
@@ -27,23 +39,18 @@ var appTimer = (remainingSeconds = null) => {
         var minutesLeft = Math.floor(totalSeconds / 60);
         var secondsLeft = totalSeconds % 60;
 
-        var minutes = document.querySelector(".minutes");
-        var seconds = document.querySelector(".seconds");
-
-        if (secondsLeft < 10) {
-            seconds.textContent = "0" + secondsLeft;
-        } else {
-            seconds.textContent = secondsLeft;
-        }
-        minutes.textContent = `${minutesLeft}`;
+        // Atualiza os inputs de minutos e segundos
+        minutesInput.value = minutesLeft < 10 ? "0" + minutesLeft : minutesLeft;
+        secondsInput.value = secondsLeft < 10 ? "0" + secondsLeft : secondsLeft;
 
         if (totalSeconds === 0) {
             endBells.play();
             clearInterval(myInterval);
-            startButton.removeEventListener("click")
+            startButton.removeEventListener("click");
         }
         totalSeconds--;
     };
+
     updateSeconds();
     myInterval = setInterval(updateSeconds, 1000);
 };
@@ -55,15 +62,28 @@ startButton.addEventListener("click", () => {
         if (isPaused) {
             pauseBells.play();
             clearInterval(myInterval);
-            startButton.innerText = "Resume";
+            startButton.innerText = "Resumir";
+            startButton.style.width = "35%";
         } else {
             appTimer(totalSeconds);
-            startButton.innerText = "Pause";
+            startButton.innerText = "Pausar";
+            startButton.style.width = "30%";
         }
     } else {
         appTimer();
     }
 });
+
+// Short and long pause functions
+shortPause.addEventListener("click", () => {
+    clearInterval(myInterval);
+    appTimer(5 * 60);
+})
+
+longPause.addEventListener("click", () => {
+    clearInterval(myInterval);
+    appTimer(10 * 60);
+})
 
 // Expansive content function
 

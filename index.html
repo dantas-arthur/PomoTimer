@@ -38,11 +38,18 @@
             <div class="timer-container">
                 <div class="circle-container">
                     <div class="app-counter-box">
-                        <p><span class="minutes">25</span>:<span class="seconds">00</span></p>
+                        <p>
+                            <input class="timer-select minutes" type="text" placeholder="25" minlength="2" maxlength="2">:<input class="timer-select seconds" type="text" placeholder="00" minlength="2" maxlength="2">
+                        </p>
+                        <!-- <p><span class="minutes">25</span>:<span class="seconds">00</span></p> -->
                     </div>
                     <div class="control-buttons">
-                        <button id="start-button" class="timer-button">Start</button>
+                        <button id="start-button" class="timer-button">Iniciar</button>
                     </div>
+                </div>
+                <div class="pause-container">
+                    <button id="short-pause" class="timer-button pause-button">Pausa curta</button>
+                    <button id="long-pause" class="timer-button pause-button">Pausa longa</button>
                 </div>
             </div>
         </section>
@@ -75,7 +82,7 @@
         </section>
     </main>
     <footer>
-        <p class="footer-copy">&copy; 2024 Arthur Dantas. All rights reserved.</p>
+        <p class="footer-copy">&copy; 2024 Arthur Dantas. Todos os direitos reservados.</p>
     </footer>
     <script src="script.js"></script>
 </body>
