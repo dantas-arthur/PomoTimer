@@ -82,7 +82,7 @@ shortPause.addEventListener("click", () => {
 
 longPause.addEventListener("click", () => {
     clearInterval(myInterval);
-    appTimer(10 * 60);
+    appTimer(15 * 60);
 })
 
 // Expansive content function
