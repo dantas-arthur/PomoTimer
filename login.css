@@ -1,0 +1,50 @@
+/* Reset all css elements */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Body, fonts and other elements */
+
+body {
+    --color1: #F0F4EF;
+    --color2: #E94F37;
+    --color3: #393E41;
+    background-color: var(--color2);
+    font-family: "Courier Prime", monospace;
+}
+
+h1, h2, p, hr {
+    color: var(--color3);
+}
+
+/* Login form */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.form {
+    width: 40%;
+    text-align: center;
+    background-color: var(--color1);
+    border-radius: 10px;
+    h1 {
+        font-size: 3rem;
+        padding-top: 5%;
+    }
+}
+
+.user-data {
+    font-size: 1.5rem;
+    margin-top: 5%;
+    input {
+        background: none;
+        border: 2px solid var(--color3);
+        border-radius: 5px;
+    }
+}

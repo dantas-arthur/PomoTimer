@@ -248,7 +248,7 @@ footer {
 }
 
 .collapsible {
-    width: 100%;
+    width: 90%;
     background: none;
     border: none;
     color: var(--color2);
@@ -268,7 +268,7 @@ footer {
 .expand {
     padding: 0;
     margin: 0;
-    margin-left: 85%;
+    margin-left: 95%;
 }
 
 .faq {
