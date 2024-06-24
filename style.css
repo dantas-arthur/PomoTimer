@@ -11,6 +11,8 @@
     color: white;
 }
 
+/* Smooth scroll behavior */
+
 html {
     scroll-behavior: smooth;
 }
@@ -248,6 +250,9 @@ footer {
 }
 
 .collapsible {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 90%;
     background: none;
     border: none;
@@ -257,18 +262,20 @@ footer {
     text-align: left;
     cursor: pointer;
     margin: 1% 0% 1%;
+    flex-wrap: wrap;
+}
+
+.collapsible .expand {
+    width: 32px;
+    height: auto;
+    margin-left: auto;
+    margin-top: 50px;
 }
 
 .content {
     padding: 0 40px;
     display: none;
     overflow: hidden;
-}
-
-.expand {
-    padding: 0;
-    margin: 0;
-    margin-left: 95%;
 }
 
 .faq {
@@ -286,4 +293,120 @@ mark.red {
     color: var(--color2);
     background: none;
     font-weight: bold;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 610px) {
+
+    /* Body, font-size, footer and other elements*/
+
+    body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    footer {
+        p {
+            font-size: 0.7rem;
+        }
+    }
+
+    /* Top navigator */
+
+    .nav-bar {
+        padding: 8px 10px;
+    }
+
+    #logo {
+        width: 45px;
+    }
+
+    .site-name {
+        font-size: 1rem;
+    }
+
+    .menu {
+        display: none;
+        margin-left: auto;
+    }
+
+    /* Timer, buttons and other elements */
+
+    .timer-container {
+        width: 80%;
+        margin-top: 40%;
+        margin-bottom: 25%;
+    }
+
+    .circle-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .app-counter-box {
+        top: 80px;
+        p {
+            font-size: 3rem;
+        }
+    }
+
+    .timer-select {
+        font-size: 3rem;
+    }
+
+    .timer-button {
+        margin-bottom: 15%;
+        font-size: 120%;
+    }
+
+    .pause-button {
+        font-size: 110%;
+        width: 35%;
+        height: auto;
+        margin: 10% 0 0 2%;
+    }
+
+    .about-container {
+        margin-top: 10%;
+        padding-bottom: 2%;
+    }
+
+    .collapsible {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 90%;
+        background: none;
+        border: none;
+        color: var(--color2);
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: left;
+        cursor: pointer;
+        margin: 10% 0% 1%;
+    }
+
+    .expand {
+        display: none;
+    }
+
+    .content {
+        max-width: 100%;
+        margin: 5% 0;
+        padding: 0;
+        display: none;
+        overflow: hidden;
+    }
 }
