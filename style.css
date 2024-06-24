@@ -23,8 +23,7 @@ body {
     --color1: #F0F4EF;
     --color2: #E94F37;
     --color3: #393E41;
-    background: rgb(177,62,45);
-    background: linear-gradient(360deg, rgba(177,62,45,1) 0%, rgba(233,79,55,1) 100%); 
+    background-image: linear-gradient(to top, #a23a29, #b33f2c, #c54430, #d74a33, #e94f37);
     font-family: "Courier Prime", monospace;
 }
 
@@ -396,7 +395,7 @@ mark.red {
     }
 
     .timer-select {
-        width: 23%;
+        width: 22%;
         font-size: 3rem;
     }
 
