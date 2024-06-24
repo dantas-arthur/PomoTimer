@@ -363,6 +363,7 @@ mark.red {
     }
 
     .timer-select {
+        width: 24%;
         font-size: 3rem;
     }
 
