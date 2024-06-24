@@ -61,6 +61,15 @@ footer {
 
 /* Top navigator bar and it's elements */
 
+#logo {
+    width: 65px;
+}
+
+.site-name {
+    font-size: 2rem;
+    color: var(--color3);
+}
+
 .nav-bar {
     background-color: var(--color1);
     width: 100%;
@@ -73,21 +82,6 @@ footer {
     top: 0;
     z-index: 100;
     padding: 12px 20px;
-}
-
-.nav-button:hover {
-    text-decoration: underline;
-    color: var(--color2);
-    transition: 0.15s ease-in-out;
-}
-
-.open-menu, .close-menu {
-    display: none;
-}
-
-.site-name {
-    font-size: 2rem;
-    color: var(--color3);
 }
 
 .menu {
@@ -109,8 +103,14 @@ footer {
     }
 }
 
-#logo {
-    width: 65px;
+.nav-button:hover {
+    text-decoration: underline;
+    color: var(--color2);
+    transition: 0.15s ease-in-out;
+}
+
+.open-menu, .close-menu {
+    display: none;
 }
 
 #check {
@@ -338,9 +338,42 @@ mark.red {
     }
 
     .menu {
-        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         margin-left: auto;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color1);
+        transition: all 0.2s ease-in-out;
+        li, a {
+            display: flex;
+            font-size: 1.5rem;
+            padding: 10px;
+            text-align: center;
+        }
     }
+
+    .open-menu {
+        margin-left: 50%;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    .open-menu, .close-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    #check:checked ~ .menu {right: 0;}
 
     /* Timer, buttons and other elements */
 
