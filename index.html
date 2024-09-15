@@ -50,8 +50,18 @@
                     <button id="short-pause" class="timer-button pause-button">Pausa curta</button>
                     <button id="long-pause" class="timer-button pause-button">Pausa longa</button>
                 </div>
+                <div class="todo-list-container">
+                    <h2>Tarefas</h2>
+                    <div class="user-item-input">
+                        <input type="text" placeholder="Título" id='todo-input'>
+                        <span onclick="newElement()" class="todo-add timer-button">Adicionar</span>
+                    </div>
+                </div>
+                <ul id="todo-list">
+                    <li class="list-item checked" style="display: none;"></li>
+                </ul>
             </div>
-        </section>
+        </section>        
         <section id="about">
             <div class="about-container">
                 <h1>Sobre a técnica Pomodoro</h1>
