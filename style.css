@@ -383,11 +383,17 @@ footer {
     flex-wrap: wrap;
 }
 
-.collapsible .expand {
+.collapsible {
     width: 32px;
     height: auto;
     margin-left: auto;
     margin-top: 50px;
+}
+
+.expand {
+    width: 32px;
+    height: auto;
+    margin-left: auto;
 }
 
 .content {
@@ -577,15 +583,18 @@ mark.red {
     /* About container and other elements */
 
     .about-container {
-        margin-top: 10%;
-        padding-bottom: 2%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .faq {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3%;
     }
 
     .collapsible {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 90%;
+        width: 95%;
         background: none;
         border: none;
         color: var(--color2);
@@ -593,16 +602,15 @@ mark.red {
         font-weight: 600;
         text-align: left;
         cursor: pointer;
-        margin: 10% 0% 1%;
     }
 
     .expand {
-        display: none;
+        margin-right: 8%;
     }
 
     .content {
         max-width: 100%;
-        margin: 5% 0;
+        margin: 5% 0 0 5%;
         padding: 0;
         display: none;
         overflow: hidden;
