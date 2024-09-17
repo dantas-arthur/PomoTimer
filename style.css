@@ -122,6 +122,10 @@ footer {
     }
 }
 
+.user-login {
+    display: none;
+}
+
 .open-menu, .close-menu {
     display: none;
 }
@@ -482,8 +486,14 @@ mark.red {
         }
     }
 
+    .user-login {
+        display: block;
+        margin-left: 40%;
+        cursor: pointer;
+    }
+
     .open-menu {
-        margin-left: 50%;
+        margin-left: 0%;
     }
 
     .close-menu {
