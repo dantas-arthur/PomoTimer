@@ -141,7 +141,7 @@ function newElement() {
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === '') {
-    alert("You must write something!");
+    alert("Preencha o campo adequadamente.");
   } else {
     document.getElementById("todo-list").appendChild(li);
   }
