@@ -26,12 +26,8 @@
                                 <li><a href="#home" class="nav-button">Home</a></li>
                                 <li><a href="#about" class="nav-button">Sobre</a></li>
                                 <li><a href="#" class="nav-button">Histórico</a></li>
-                                <span class="login-container desktop-login">
-                                    <li>
-                                        <a href="login.html">
-                                            <img class="user-logo" src="assets/SVG/user.svg" alt="login" width="32px">
-                                        </a>
-                                    </li>
+                                <span class="desktop-login">
+                                    <li><a href="login.html" class="nav-button">Conta</a></li>
                                 </span>
                             </ul>
                         </span>
@@ -62,7 +58,7 @@
                     <div class="user-item-input">
                         <input type="text" placeholder="&nbsp;" id='todo-input'>
                         <span class="label">Título</span>
-                        <span onclick="newElement()" class="todo-add timer-button">Adicionar</span>
+                        <button onclick="newElement()" class="todo-add add-button">Adicionar</button>
                     </div>
                 </div>
                 <ul id="todo-list">
