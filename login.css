@@ -27,37 +27,56 @@ h1, h2, p, hr {
     color: var(--color3);
 }
 
+.site-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+#logo {
+    width: 128px;
+}
+
+.site-name {
+    font-size: 3rem;
+}
+
 .container {
     background-color: var(--color1);
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    width: 1200px;
     max-width: 100%;
-    min-height: 480px;
-    margin-top: 25%;
+    min-height: 650px;
+    margin-top: 2%;
 }
 
 .container p {
-    font-size: 14px;
+    font-size: 1.2rem;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
     color: var(--color1);
 }
 
-.container h1 {
+.sign-in-header {
+    color: var(--color3);
+}
+
+.login-header {
     color: var(--color1);
 }
 
 .container span {
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 .container a {
     color: var(--color3);
-    font-size: 13px;
+    font-size: 1.2rem;
     text-decoration: none;
     margin: 15px 0 10px;
 }
@@ -65,7 +84,7 @@ h1, h2, p, hr {
 .container button {
     background-color: var(--color2);
     color: var(--color1);
-    font-size: 12px;
+    font-size: 1rem;
     padding: 10px 45px;
     border: 1px solid transparent;
     border-radius: 8px;
@@ -96,7 +115,7 @@ h1, h2, p, hr {
     border: none;
     margin: 8px 0;
     padding: 10px 15px;
-    font-size: 13px;
+    font-size: 1.2rem;
     border-radius: 8px;
     width: 100%;
     outline: none;
@@ -177,7 +196,7 @@ h1, h2, p, hr {
 .toggle {
     background-color: var(--color2);
     height: 100%;
-    background: linear-gradient(to right, #b33f2c, #c54430, #d74a33, #e94f37);
+    background: var(--color2);
     color: var(--color1);
     position: relative;
     left: -100%;

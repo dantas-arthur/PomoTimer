@@ -122,7 +122,7 @@ footer {
     }
 }
 
-.user-login {
+.mobile-login {
     display: none;
 }
 
@@ -253,7 +253,7 @@ footer {
     }
 }
 
-.user-item-input {
+.mobile-item-input {
     position: relative;
     overflow: hidden;
 }
@@ -332,15 +332,14 @@ footer {
 .label {
     position: absolute;
     font-size: 1.2rem;
-    top: 35%;
-    right: 60%;
+    top: 100%;
+    right: 58%;
     transform-origin: 0 0;
     transform: translate3d(0,0,0);
     transition: all .2s ease;
     pointer-events: none;
     color: var(--color1);
 }
-
 
 #todo-input:not(:placeholder-shown) + .label,
 #todo-input:focus + .label {
@@ -516,7 +515,11 @@ mark.red {
         }
     }
 
-    .user-login {
+    .desktop-login {
+        display: none;
+    }
+
+    .mobile-login {
         display: block;
         margin-left: 37%;
         margin-right: 3%;
@@ -593,7 +596,7 @@ mark.red {
         }
     }
 
-    .user-item-input {
+    .mobile-item-input {
         display: flex;
         flex-direction: column;
     }
@@ -601,19 +604,18 @@ mark.red {
     #todo-input {
         width: 96%;
         margin-top: 5%;
+        margin-bottom: 5%;
     }
 
     .label {
-        top: 20%;
-        right: 73%;
+        top: 97.5%;
+        right: 66%;
     }
 
     .todo-add {
-        width: 90%;
+        width: 990%;
         height: auto;
         padding: 3%;
-        margin-top: 2%;
-        margin-left: 3%;
     }
 
     #todo-list {
