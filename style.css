@@ -608,12 +608,11 @@ mark.red {
     }
 
     .label {
-        top: 97.5%;
-        right: 66%;
+        top: 98%;
+        right: 65%;
     }
 
     .todo-add {
-        width: 990%;
         height: auto;
         padding: 3%;
     }
