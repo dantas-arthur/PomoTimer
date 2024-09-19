@@ -193,7 +193,7 @@ footer {
     transition: all 0.5s;
 }
 
-.timer-button::before {
+.timer-button::before, .add-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -206,12 +206,12 @@ footer {
     transition: all 0.3s;
 }
 
-.timer-button:hover::before {
+.timer-button:hover::before, .add-button:hover::before {
     opacity: 0 ;
     transform: scale(0.5,0.5);
 }
 
-.timer-button::after {
+.timer-button::after, .add-button::after {
     content: '';
     position: absolute;
     top: 0;
@@ -226,7 +226,7 @@ footer {
     transform: scale(1.2,1.2);
 }
 
-.timer-button:hover::after {
+.timer-button:hover::after, .add-button:hover::after {
     opacity: 1;
     transform: scale(1,1);
 }
@@ -370,44 +370,6 @@ footer {
     outline: none;
     cursor: pointer;
     transition: all 0.5s;
-}
-
-.add-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    z-index: 1;
-    background-color: rgba(255,255,255,0.1);
-    transition: all 0.3s;
-}
-
-.add-button:hover::before {
-    opacity: 0 ;
-    transform: scale(0.5,0.5);
-}
-
-.add-button::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    z-index: 1;
-    opacity: 0;
-    transition: all 0.3s;
-    border: 1px solid rgba(255,255,255,0.5);
-    transform: scale(1.2,1.2);
-}
-
-.add-button:hover::after {
-    opacity: 1;
-    transform: scale(1,1);
 }
 
 #list-item {
@@ -601,7 +563,7 @@ mark.red {
 
     .timer-container {
         width: 80%;
-        height: 115vh;
+        height: 120vh;
         margin-top: 30%;
     }
 
@@ -656,14 +618,13 @@ mark.red {
     }
     
     #todo-input {
-        width: 96%;
-        margin-top: 5%;
-        margin-bottom: 5%;
+        width: 100%;
+        margin: 5% 3.5% 5% 0;
     }
 
     .label {
         top: 98.5%;
-        right: 66%;
+        right: 68%;
     }
 
     .todo-add {
