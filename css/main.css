@@ -1,4 +1,4 @@
-/* Reset all margins and paddings */
+/* Reset all css elements */
 
 * {
     box-sizing: border-box;
@@ -556,7 +556,6 @@ mark.red {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-left: auto;
         width: 80%;
         height: 100vh;
         position: fixed;
@@ -567,6 +566,9 @@ mark.red {
         transition: all 0.2s ease-in-out;
         li, a {
             display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             font-size: 1.5rem;
             padding: 10px;
         }

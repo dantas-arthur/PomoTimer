@@ -1,0 +1,23 @@
+/* Reset all css elements */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background-color: var(--color3);
+    color: var(--color1);
+}
+
+/* Body, fonts and other elements */
+
+body {
+    --color1: #F0F4EF;
+    --color2: #E94F37;
+    --color3: #393E41;
+    background-image: linear-gradient(to top, #a23a29, #b33f2c, #c54430, #d74a33, #e94f37);
+    font-family: "Courier Prime", monospace;
+}
+
