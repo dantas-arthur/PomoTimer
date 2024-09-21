@@ -44,7 +44,11 @@ p, h1, h2, hr {
 }
 
 hr {
+    border: none;
+    border-radius: 1px;
     width: 90%;
+    height: 2px;
+    background-color: var(--color2);
 }
 
 footer {
@@ -479,9 +483,12 @@ h2 {
 .credits-container {
     text-align: center;
     h2 {
-        color: var(--color3);
-        margin: 1%;
+        margin-bottom: 2%;
     }
+}
+
+.site-logo-bottom {
+    width: 90px;
 }
 
 .logo-bottom {
@@ -489,6 +496,10 @@ h2 {
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+.site-name-bottom {
+    color: var(--color3);
 }
 
 /* Mark */
@@ -711,5 +722,23 @@ mark.red {
         padding: 0;
         display: none;
         overflow: hidden;
+    }
+
+    /* Credits container and it's elements */
+
+    .credits-container {
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 5%;
+        }
+    }
+
+    .site-logo-bottom {
+        width: 64px;
+    }
+
+    .site-name-bottom {
+        color: var(--color3);
+        font-size: 2rem;
     }
 }
