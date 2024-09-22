@@ -87,6 +87,15 @@ footer {
     padding: 12px 20px;
 }
 
+.nav-image {
+    width: 30px;
+}
+
+.nav-label {
+    font-size: 1rem;
+    color: var(--color3);
+}
+
 .nav-button::before {
     content: '';
     position: absolute;
@@ -550,6 +559,16 @@ mark.red {
 
     .site-name {
         font-size: 1rem;
+    }
+
+    .nav-image {
+        width: 30px;
+    }
+    
+    .nav-label {
+        font-size: 1.5rem;
+        color: var(--color3);
+        margin-left: 5%;
     }
 
     .menu {

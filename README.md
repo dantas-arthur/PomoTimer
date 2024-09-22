@@ -8,13 +8,14 @@
 <div>
  <img src="assets/screenshot/Screenshot_1.png">
  <img src="assets/screenshot/Screenshot_2.png">
+ <img src="assets/screenshot/Screenshot_3.png">
 </div>
 
 <h1>To-do list</h1>
 
-- [x] Estilizar o site
-- [x] Criar a lógica do timer
-- [x] Criar a aba "Sobre"
-- [ ] Criar lógica e a aba do "Histórico"
-- [ ] Criar a lógica para vincular contas
-- [x] Publicar o projeto no GitHub Pages
+- [x] Estilizar o site;
+- [x] Criar a lógica do timer;
+- [x] Criar a aba "Sobre";
+- [ ] Criar lógica e a aba do "Histórico";
+- [ ] Criar a lógica para vincular contas;
+- [x] Publicar o projeto no GitHub Pages.
