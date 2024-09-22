@@ -1,5 +1,5 @@
 <div align="center">
- <img src="assets/SVG/site-logo.svg" width="256px">
+ <img src="assets/svg/site-logo.svg" width="256px">
  <h1>PomoTimer</h1>
 </div>
 <p align="center">Site pomodoro para auxiliar na produtividade.</p>
