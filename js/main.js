@@ -9,50 +9,74 @@ var shortPause = document.getElementById("short-pause");
 var longPause = document.getElementById("long-pause");
 var session = document.querySelector(".minutes");
 
-var myInterval;
-var isPaused = false;
+let myInterval;
+let isPaused = false;
 var totalSeconds = 0;
+
+// Function to save the session data on localStorage
+function saveSessionData(sessionType, duration, breakTime) {
+  const sessionData = {
+    date: new Date().toLocaleDateString(),
+    type: sessionType, // "Pomodoro", "Short Pause", "Long Pause"
+    duration: duration, // Session duration in minutes
+    breakTime: breakTime // Break time duration in minutes
+  };
+
+  // Retrieves existing sessions from localStorage or initializes an empty array
+  let sessions = JSON.parse(localStorage.getItem("sessions")) || [];
+
+  // Add a new session on the session array
+  sessions.push(sessionData);
+
+  // Save array on the localStorage
+  localStorage.setItem("sessions", JSON.stringify(sessions))
+}
 
 // Timer function
 var appTimer = (remainingSeconds = null) => {
-    startBells.play();
-    startButton.innerText = "Pausar";
-    
-    // Seleciona os inputs de minutos e segundos
-    var minutesInput = document.querySelector('.minutes');
-    var secondsInput = document.querySelector('.seconds');
-    var sessionAmount;
+  startBells.play();
+  startButton.innerText = "Pausar";
+  
+  var minutesInput = document.querySelector('.minutes');
+  var secondsInput = document.querySelector('.seconds');
+  var minutesAmount, secondsAmount;
 
-    if (!isNaN(minutesInput.value) && minutesInput.value.trim() !== "") {
-        sessionAmount = parseInt(minutesInput.value, 10);
-    } else {
-        sessionAmount = parseInt(minutesInput.placeholder, 10);
-    }
+  if (!isNaN(minutesInput.value) && minutesInput.value.trim() !== "") {
+      minutesAmount = parseInt(minutesInput.value, 10);
+  } else {
+      minutesAmount = parseInt(minutesInput.placeholder, 10);
+  }
 
-    if (remainingSeconds !== null) {
-        totalSeconds = remainingSeconds;
-    } else {
-        totalSeconds = sessionAmount * 60;
-    }
+  if (!isNaN(secondsInput.value) && secondsInput.value.trim() !== "") {
+      secondsAmount = parseInt(secondsInput.value, 10);
+  } else {
+      secondsAmount = 0;
+  }
 
-    var updateSeconds = () => {
-        var minutesLeft = Math.floor(totalSeconds / 60);
-        var secondsLeft = totalSeconds % 60;
+  if (remainingSeconds !== null) {
+      totalSeconds = remainingSeconds;
+  } else {
+      totalSeconds = minutesAmount * 60 + secondsAmount;
+  }
 
-        // Atualiza os inputs de minutos e segundos
-        minutesInput.value = minutesLeft < 10 ? "0" + minutesLeft : minutesLeft;
-        secondsInput.value = secondsLeft < 10 ? "0" + secondsLeft : secondsLeft;
+  var updateSeconds = () => {
+      var minutesLeft = Math.floor(totalSeconds / 60);
+      var secondsLeft = totalSeconds % 60;
 
-        if (totalSeconds === 0) {
-            endBells.play();
-            clearInterval(myInterval);
-            startButton.removeEventListener("click");
-        }
-        totalSeconds--;
-    };
+      minutesInput.value = minutesLeft < 10 ? "0" + minutesLeft : minutesLeft;
+      secondsInput.value = secondsLeft < 10 ? "0" + secondsLeft : secondsLeft;
 
-    updateSeconds();
-    myInterval = setInterval(updateSeconds, 1000);
+      if (totalSeconds === 0) {
+          endBells.play();
+          clearInterval(myInterval);
+          startButton.removeEventListener("click");
+          saveSessionData("Pomodoro", minutesAmount, secondsAmount)
+      }
+      totalSeconds--;
+  };
+
+  updateSeconds();
+  myInterval = setInterval(updateSeconds, 1000);
 };
 
 // Event listener for startButton
@@ -78,11 +102,13 @@ startButton.addEventListener("click", () => {
 shortPause.addEventListener("click", () => {
     clearInterval(myInterval);
     appTimer(5 * 60);
+    saveSessionData("Pausa curta", 5, 0)
 })
 
 longPause.addEventListener("click", () => {
     clearInterval(myInterval);
     appTimer(15 * 60);
+    saveSessionData("Pausa longa", 15, 0)
 })
 
 // Create a "close" button and append it to each list item
