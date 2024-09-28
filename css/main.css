@@ -687,7 +687,7 @@ mark.red {
     }
 
     .label {
-        top: 98.5%;
+        top: 98%;
         right: 68%;
     }
 
@@ -702,7 +702,7 @@ mark.red {
     }
 
     #todo-list {
-        max-height: 26%;
+        max-height: 30%;
         li {
             width: 100%;
             margin: 0;
