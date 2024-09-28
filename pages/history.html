@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -16,25 +16,48 @@
             <head></head>
                 <nav>
                     <ul class="nav-bar">
-                        <div class="logo-container"><img id="logo" src="../assets/svg/site-logo.svg" alt="site logo"></div>
-                        <input type="checkbox" id="check"><h1 class="site-name">PomoTimer</h1>
+                        <a href="../index.html"><div class="logo-container"><img id="logo" src="../assets/svg/site-logo.svg" alt="site logo"></div></a>
+                        <input type="checkbox" id="check"><a href="../index.html" style="text-decoration: none;"><h1 class="site-name">PomoTimer</h1></a>
                         <span class="menu">
+                            <label for="check" class="close-menu"><img src="../assets/svg/close-menu.svg" alt="close menu button" width="32px"></label>
                             <ul>
-                                <li><a class="nav-button" href="../index.html"><img class="nav-image" src="../assets/svg/home.svg" alt="home"><h1 class="nav-label">Home</h1></a></li>
                                 <li><a class="nav-button" href="#"><img class="nav-image" src="../assets/svg/filter.svg" alt="filter"><h1 class="nav-label">Filtrar</h1></a></li>
                                 <li><a class="nav-button" href="#"><img class="nav-image" src="../assets/svg/sort.svg" alt="sort"><h1 class="nav-label">Ordenar</h1></a></li>
                                 <li><a class="nav-button" href="#"><img class="nav-image" src="../assets/svg/clear.svg" alt="clear"><h1 class="nav-label">Limpar</h1></a></li>
                             </ul>
                         </span>
+                        <label for="check" class="open-menu"><img src="../assets/svg/open-menu.svg" alt="open menu button" width="32px"></label>
                     </ul>
                 </nav>
             </head>
         </section>
         <section>
-            <div class="history-container">
-
+            <div class="history-header">
+                <h1>Histórico de Sessões</h1>
+            </div>
+            <div class="history-table-container">
+                <ul class="responsive-table">
+                    <li class="table-header">
+                        <div class="col col-1">Del</div>
+                        <div class="col col-2">Sessão</div>
+                        <div class="col col-3">Duração</div>
+                        <div class="col col-4">Data/Hora</div>
+                    </li>
+                  </ul>
+                </div>
             </div>
         </section>
     </main>
+    <footer>
+        <div class="credits-container">
+            <div class="logo-bottom">
+                <img class="site-logo-bottom" src="../assets/svg/site-logo.svg" alt="site-logo">
+                <h1 class="site-name-bottom">PomoTimer</h1>
+            </div>
+            <h2>Programe. Foque. Repita.</h2>
+            <p class="footer-copy">&copy; 2024 Arthur Dantas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="../js/history.js"></script>
 </body>
 </html>

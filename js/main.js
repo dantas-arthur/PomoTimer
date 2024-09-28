@@ -14,24 +14,23 @@ let isPaused = false;
 var totalSeconds = 0;
 
 // Function to save the session data on localStorage
-function saveSessionData(sessionType, duration, breakTime) {
-  const sessionData = {
-    date: new Date().toLocaleDateString(),
-    type: sessionType, // "Pomodoro", "Short Pause", "Long Pause"
-    duration: duration, // Session duration in minutes
-    breakTime: breakTime // Break time duration in minutes
+function saveSessionData(type, minutes, seconds) {
+  let sessionData = {
+      type: type,
+      duration: `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`,
+      date: new Date().toLocaleString()
   };
 
-  // Retrieves existing sessions from localStorage or initializes an empty array
-  let sessions = JSON.parse(localStorage.getItem("sessions")) || [];
+  // Recuperar histórico existente
+  let history = JSON.parse(localStorage.getItem('pomodoroHistory')) || [];
 
-  // Add a new session on the session array
-  sessions.push(sessionData);
+  // Adicionar nova sessão ao histórico
+  history.push(sessionData);
 
-  // Save array on the localStorage
-  localStorage.setItem("sessions", JSON.stringify(sessions))
+  // Atualizar localStorage
+  localStorage.setItem('pomodoroHistory', JSON.stringify(history));
 }
-
+4
 // Timer function
 var appTimer = (remainingSeconds = null) => {
   startBells.play();
@@ -69,8 +68,8 @@ var appTimer = (remainingSeconds = null) => {
       if (totalSeconds === 0) {
           endBells.play();
           clearInterval(myInterval);
-          startButton.removeEventListener("click");
-          saveSessionData("Pomodoro", minutesAmount, secondsAmount)
+          startButton.innerText = "Iniciar";
+          saveSessionData("Pomodoro", minutesAmount, secondsAmount);
       }
       totalSeconds--;
   };
@@ -121,7 +120,7 @@ for (i = 0; i < myNodelist.length; i++) {
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
-
+34
 // Click on a close button to hide the current list item
 var close = document.getElementsByClassName("close");
 var i;

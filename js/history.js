@@ -1,51 +1,70 @@
-// Função para carregar e exibir os dados salvos no localStorage
-function loadSessionData() {
-    // Recupera os dados das sessões do localStorage
-    let sessions = JSON.parse(localStorage.getItem("sessions")) || [];
-  
-    // Seleciona o corpo da tabela onde os dados serão inseridos
-    var sessionTableBody = document.getElementById("session-table-body");
-  
-    // Limpa o conteúdo atual da tabela para evitar duplicações
-    sessionTableBody.innerHTML = "";
-  
-    // Itera sobre as sessões e cria uma linha para cada uma
-    sessions.forEach(session => {
-      let row = document.createElement("tr");
-  
-      // Cria células para cada dado da sessão
-      let dateCell = document.createElement("td");
-      dateCell.textContent = session.date;
-      row.appendChild(dateCell);
-  
-      let typeCell = document.createElement("td");
-      typeCell.textContent = session.type;
-      row.appendChild(typeCell);
-  
-      let durationCell = document.createElement("td");
-      durationCell.textContent = session.duration;
-      row.appendChild(durationCell);
-  
-      let breakTimeCell = document.createElement("td");
-      breakTimeCell.textContent = session.breakTime;
-      row.appendChild(breakTimeCell);
-  
-      // Adiciona a linha à tabela
-      sessionTableBody.appendChild(row);
-    });
+window.onload = function() {
+  // Select the table history
+  const sessionList = document.querySelector('.responsive-table');
+  let history = JSON.parse(localStorage.getItem('pomodoroHistory')) || [];
+
+  history.forEach((session, index) => {
+      // Create a new line item on the table
+      let newSessionItem = document.createElement('li');
+      newSessionItem.classList.add('table-row');
+
+      // Verify if the session duration is higher than 1 minute
+      let minSecDuration = "minuto";
+      if (session.duration.startsWith("0:0")) {
+        minSecDuration = "segundo";
+      } else if (session.duration.startsWith("0")) {
+        minSecDuration = "segundos";
+      } else if (session.duration !== "1:00") {
+        minSecDuration = "minutos";
+      } else {
+        minSecDuration = "minuto";
+      }
+
+      // Adding the session content
+      newSessionItem.innerHTML = `
+        <div class="col col-1"><img class="delete-item" src="../assets/svg/clear.svg"></div>
+        <div class="col col-2">${session.type}</div>
+        <div class="col col-3">${session.duration} ${minSecDuration}</div>
+        <div class="col col-4">${session.date}</div>
+      `;
+
+
+      // Add click event to remove the session
+      const closeBtn = newSessionItem.querySelector('.delete-item');
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 610) {
+        closeBtn.style.width = "20px";
+      } else {
+        closeBtn.style.width = "32px";
+      }
+      closeBtn.style.cursor = "pointer";
+      closeBtn.onclick = function() {
+        // Remove the session item from the DOM
+        sessionList.removeChild(newSessionItem);
+        // Remove the session from localStorage
+        removeSession(index);
+      };
+
+      // Add the new item to the table
+      sessionList.appendChild(newSessionItem);
+  });
+};
+
+// Function to remove a session from localStorage
+function removeSession(index) {
+  // Retrieve the history from localStorage
+  let history = JSON.parse(localStorage.getItem('pomodoroHistory')) || [];
+
+  // Check if the index is valid
+  if (index >= 0 && index < history.length) {
+    // Remove the session from the history
+    history.splice(index, 1);
+
+    // Store the updated history back to localStorage
+    localStorage.setItem('pomodoroHistory', JSON.stringify(history));
+
+    console.log(`Sessão na posição ${index} removida com sucesso.`);
+  } else {
+    console.log("Índice inválido.");
   }
-  
-  // Função para alternar a visibilidade da área de histórico
-  function toggleHistoryDisplay() {
-    var historyContainer = document.getElementById("session-history");
-    if (historyContainer.style.display === "none") {
-      loadSessionData(); // Carrega os dados ao abrir o histórico
-      historyContainer.style.display = "block";
-    } else {
-      historyContainer.style.display = "none";
-    }
-  }
-  
-  // Event listener para o botão de mostrar histórico
-  var showHistoryButton = document.getElementById("show-history");
-  showHistoryButton.addEventListener("click", toggleHistoryDisplay);
+}

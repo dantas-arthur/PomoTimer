@@ -495,6 +495,7 @@ h2 {
 
 .credits-container {
     text-align: center;
+    padding: 2%;
     h2 {
         margin-bottom: 2%;
     }
@@ -512,6 +513,7 @@ h2 {
 }
 
 .site-name-bottom {
+    font-size: 3rem;
     color: var(--color3);
 }
 
@@ -528,10 +530,6 @@ mark.red {
 @media screen and (max-width: 610px) {
 
     /* Body, font-size, footer and other elements*/
-
-    body {
-        font-size: 1rem;
-    }
 
     h1 {
         font-size: 2rem;
