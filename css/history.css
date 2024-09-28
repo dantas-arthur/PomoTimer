@@ -147,6 +147,7 @@ footer {
 
 .responsive-table {
     width: 80%;
+    min-height: 19.5vh;
     margin: 5% 0 0 10%;
     li {
       border-radius: 10px;
@@ -276,7 +277,7 @@ footer {
         justify-content: center;
         text-align: center;
         font-size: 1.5rem;
-        padding: 10px;
+        padding: 20px;
     }
 
     .open-menu {
@@ -300,12 +301,12 @@ footer {
 
     .history-header {
         margin-top: 30%;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .responsive-table {
         width: 90%;
-        min-height: 30vh;
+        min-height: 32vh;
         margin: 5% 0 10% 5%;
     }
 

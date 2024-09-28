@@ -288,43 +288,17 @@ footer {
     margin-bottom: 2%;
     font-size: 1.2rem;
     color: var(--color1);
-    margin-top: 1%;
-    background: rgba(0, 0, 0, 0.02);
+    background: rgba(0, 0, 0, 0.05);
     transition: all 0.2s ease;
     padding: 16px 12px 0 12px;
 }
 
 #todo-input:hover, #todo-input:focus {
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(0, 0, 0, 0.09);
 }
 
-#todo-input:focus + .label + .focus-bg {
-    transform: scaleX(1);
-}
-
-#todo-input:not(:placeholder-shown) + .label,
-#todo-input:focus + .label {
-    transform: translate3d(0, -12px, 0) scale(0.75);
+.todo-list-container h2 {
     color: var(--color1);
-}
-
-.label {
-    position: absolute;
-    font-size: 1.2rem;
-    top: 95.5%;
-    right: 57.5%;
-    transform-origin: 0 0;
-    transform: translate3d(0,0,0);
-    transition: all .2s ease;
-    pointer-events: none;
-    color: var(--color1);
-}
-
-
-.todo-list-container {
-    h2 {
-        color: var(--color1);
-    }
 }
 
 #todo-list {
@@ -409,7 +383,7 @@ footer {
     color: #fff;
     text-decoration: line-through;
 }
-  
+
 .list-item.checked::before {
     content: '';
     position: absolute;
@@ -482,14 +456,13 @@ footer {
 .faq {
     text-align: left;
     margin-left: 10%;
-    p {
-        max-width: 90%;
-        margin: 1% 0% 3%;
-    }
 }
-h2 {
-    color: var(--color3);
+
+.faq p {
+    max-width: 90%;
+    margin: 1% 0% 3%;
 }
+
 
 /* Credits container and it's elements */
 
@@ -684,11 +657,6 @@ mark.red {
     #todo-input {
         width: 100%;
         margin: 5% 3.5% 5% 0;
-    }
-
-    .label {
-        top: 98%;
-        right: 68%;
     }
 
     .todo-add {
