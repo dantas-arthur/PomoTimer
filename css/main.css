@@ -149,10 +149,10 @@ footer {
 /* Timer, buttons, text hints, todo list and other elements*/
 
 .timer-container {
-    height: 80vh;
+    height: 75vh;
     margin: 40px auto;
     text-align: center;
-    padding-top: 10%;
+    padding-top: 8%;
 }
 
 .circle-container {
@@ -311,7 +311,7 @@ footer {
 .label {
     position: absolute;
     font-size: 1.2rem;
-    top: 99.9%;
+    top: 95.5%;
     right: 57.5%;
     transform-origin: 0 0;
     transform: translate3d(0,0,0);
@@ -495,7 +495,7 @@ h2 {
 
 .credits-container {
     text-align: center;
-    padding: 2%;
+    padding: 1%;
     h2 {
         margin-bottom: 2%;
     }

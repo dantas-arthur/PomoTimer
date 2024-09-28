@@ -16,6 +16,6 @@
 - [x] Estilizar o site;
 - [x] Criar a lógica do timer;
 - [x] Criar a aba "Sobre";
-- [ ] Criar lógica e a aba do "Histórico";
+- [x] Criar lógica e a aba do "Histórico";
 - [ ] Criar a lógica para vincular contas;
-- [x] Publicar o projeto no GitHub Pages.
+- [x] Publicar o projeto no GitHub Pages e Vercel.
