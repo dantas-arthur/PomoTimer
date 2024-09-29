@@ -293,6 +293,11 @@ footer {
     padding: 16px 12px 0 12px;
 }
 
+#todo-input::placeholder {
+    color: var(--color1);
+    opacity: 0.5;
+}
+
 #todo-input:hover, #todo-input:focus {
     background: rgba(0, 0, 0, 0.09);
 }
@@ -471,6 +476,7 @@ footer {
     padding: 1%;
     h2 {
         margin-bottom: 2%;
+        color: var(--color3);
     }
 }
 
