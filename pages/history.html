@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes">
-    <link rel="shortcut icon" href="assets/icon/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="../assets/icon/favicon.ico">
     <meta name="theme-color" content="#F0F4EF">
     <meta name="apple-mobile-web-app-status-bar-style" content="#F0F4EF">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
                         <span class="menu">
                             <label for="check" class="close-menu"><img src="../assets/svg/close-menu.svg" alt="close menu button" width="32px"></label>
                             <ul>
-                                <li><a class="nav-button" href="#"><img class="nav-image" src="../assets/svg/filter.svg" alt="filter"><h1 class="nav-label">Filtrar</h1></a></li>
+                                <li><a id="filter" class="nav-button" href="#"><img class="nav-image" src="../assets/svg/filter.svg" alt="filter"><h1 class="nav-label">Filtrar</h1></a></li>
                                 <li><a class="nav-button" href="#"><img class="nav-image" src="../assets/svg/sort.svg" alt="sort"><h1 class="nav-label">Ordenar</h1></a></li>
                                 <li><a class="nav-button" href="#"><img class="nav-image" src="../assets/svg/clear.svg" alt="clear"><h1 class="nav-label">Limpar</h1></a></li>
                             </ul>
@@ -47,6 +47,25 @@
                         <div class="col col-4">Data/Hora</div>
                     </li>
                   </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="popups">
+                <div id="filter-popup">
+                    <div class="top-label">
+                        <img class="popup-logo" src="../assets/svg/site-logo.svg" alt="logo">
+                        <h1>Filtrar</h1>
+                    </div>
+                    <form class="filter-checks">
+                        <label><h2>Pomodoros</h2> <input id="pomodoro-check" type="checkbox"></label>
+                        <label><h2>Pausas curtas</h2> <input id="short-pause-check" type="checkbox"></label>
+                        <label><h2>Pausas longas</h2> <input id="long-pause-check" type="checkbox"></label>
+                    </form>
+                    <div class="buttons-div">
+                        <button class="popup-button" id="cancel">Cancelar</button>
+                        <button class="popup-button" id="save">Salvar</button>
+                    </div>
                 </div>
             </div>
         </section>

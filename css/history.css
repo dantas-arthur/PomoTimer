@@ -186,6 +186,137 @@ footer {
     }
 }
 
+/* Popups */
+
+#popups, #filter-popups {
+    display: none;
+}
+
+#popups {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#filter-popup {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    background-color: var(--color1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.top-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10%;
+    h1 {
+        color: var(--color3);
+        font-size: 3rem;
+    }
+    img {
+        width: 128px;
+    }
+}
+
+input[type="checkbox"] {
+    display: grid;
+    place-content: center;
+    appearance: none;
+    background-color: var(--color1);
+    margin: 0;
+    font: inherit;
+    color: var(--color2);
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.15em solid var(--color3);
+    border-radius: 0.15em;
+    transform: translateY(-0.75em);
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    box-shadow: inset 1em 1em var(--color2);
+    transform: scale(1.2);
+    transition: .1s transform ease-in-out;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(0);
+}
+
+.buttons-div {
+    text-align: right;
+    padding-top: 10%;
+}
+
+.popup-button {
+    width: 30%;
+    height: 40px;
+    color: var(--color3);
+    background: none;
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 10px;
+    background-color: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-checks {
+    display: grid;
+    flex-direction: column;
+    gap: 10px;
+    margin: 5% 0;
+}
+
+.filter-checks label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-checks h2 {
+    margin: 0;
+    color: var(--color3);
+    font-size: 2rem;
+}
+
+#cancel {
+    color: var(--color1);
+    background-color: var(--color3);
+}
+
+#save {
+    color: var(--color1);
+    background-color: var(--color2);
+}
+
 /* Credits container and it's elements */
 
 .credits-container {

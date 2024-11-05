@@ -68,3 +68,21 @@ function removeSession(index) {
     console.log("Índice inválido.");
   }
 }
+
+// Filter function
+const filterBtn = document.getElementById('filter');
+const overlay = document.getElementById('popups');
+const popup = document.getElementById('filter-popup');
+const cancelBtn = document.getElementById('cancel');
+
+// Function to open popup
+filterBtn.addEventListener('click', function() {
+  overlay.style.display = 'block';
+  popup.style.display = 'block';
+});
+
+// Function to close popup
+cancelBtn.addEventListener('click', function() {
+  overlay.style.display = 'none';
+  popup.style.display = 'none';
+});
