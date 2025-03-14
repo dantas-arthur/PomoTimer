@@ -419,9 +419,11 @@ h1, h2, p, hr {
     /* Sign-in/Sign-up container */
 
     .container {
+        box-shadow: none;
+        border-radius: 0px;
         width: 360px;
         min-height: 550px;
-        margin-top: 40%;
+        margin-top: 25%;
         position: relative; /* Container como referência para os absolutos */
     }
 
