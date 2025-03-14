@@ -6,7 +6,7 @@
 }
 
 ::selection {
-    background-color: var(--color3);
+    background-color: var(--color2);
     color: var(--color1);
 }
 
@@ -18,28 +18,102 @@ body {
     --color3: #393E41;
     background-color: var(--color1);
     font-family: "Courier Prime", monospace;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 h1, h2, p, hr {
     color: var(--color3);
 }
 
-.site-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2%;
-}
+/* Top navigator bar and it's elements */
 
 #logo {
-    width: 128px;
+    width: 65px;
 }
 
 .site-name {
-    font-size: 3rem;
+    font-size: 2rem;
+    color: var(--color3);
+}
+
+.nav-bar {
+    background-color: var(--color1);
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    padding: 12px 20px;
+}
+
+.nav-image {
+    width: 30px;
+}
+
+.nav-label {
+    font-size: 1rem;
+    color: var(--color3);
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--color2);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .2s ease-in-out;
+}
+
+.nav-button:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.menu {
+    display: flex;
+    margin-left: 50%;
+    li {
+        padding-left: 30px;
+    }
+    a {
+        font-size: 1.5rem;
+    }
+    li, a {
+        display: inline-block;
+        color: var(--color3);
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        letter-spacing: 2px;
+    }
+}
+
+.mobile-login {
+    display: none;
+}
+
+.open-menu, .close-menu {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* Sign-in/Sign-up container */
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
@@ -51,7 +125,7 @@ h1, h2, p, hr {
     width: 1200px;
     max-width: 100%;
     min-height: 650px;
-    margin-top: 2%;
+    margin-top: 10%;
 }
 
 .container p {
@@ -79,6 +153,10 @@ h1, h2, p, hr {
     font-size: 1.2rem;
     text-decoration: none;
     margin: 15px 0 10px;
+}
+
+.container .mobile-button {
+    display: none;
 }
 
 .container button {
@@ -243,5 +321,135 @@ h1, h2, p, hr {
 }
 
 @media screen and (max-width: 610px) {
+
+    /* Top navigator */
+
+    .nav-bar {
+        padding: 8px 10px;
+    }
+
+    #logo {
+        width: 45px;
+    }
+
+    .site-name {
+        font-size: 1rem;
+    }
+
+    .nav-image {
+        width: 30px;
+    }
     
+    .nav-label {
+        font-size: 1.5rem;
+        color: var(--color3);
+        margin-left: 5%;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color1);
+        transition: all 0.2s ease-in-out;
+        li, a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 10px;
+        }
+    }
+
+    .desktop-login {
+        display: none;
+    }
+
+    .mobile-login {
+        display: block;
+        margin-left: 37%;
+        margin-right: 3%;
+        cursor: pointer;
+    }
+
+    .open-menu {
+        margin-left: 0%;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    .open-menu, .close-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    #check:checked ~ .menu {right: 0;}
+
+    /* Body, font-size, footer and other elements*/
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* Logo and website name */
+
+    #logo {
+        width: 64px;
+    }
+
+    /* Sign-in/Sign-up container */
+
+    .container {
+        width: 360px;
+        min-height: 550px;
+        margin-top: 40%;
+        position: relative; /* Container como referência para os absolutos */
+    }
+
+    .sign-in, .sign-up {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none; /* Escondidos por padrão no mobile */
+    }
+
+    .sign-in.visible, .sign-up.visible {
+        display: block; /* Mostra apenas o formulário com 'visible' */
+        opacity: 1; /* Sobrescreve opacity: 0 do .sign-up */
+        z-index: 2; /* Garante que fique acima */
+    }
+
+    .container .mobile-button {
+        display: block;
+        width: 90%;
+        background-color: var(--color1);
+        color: var(--color3);
+        border-color: var(--color3);
+        margin-top: 10%;
+    }
+
+    .toggle, .toggle-container, .toggle-left, .toggle-right {
+        display: none;
+    }
+
 }
