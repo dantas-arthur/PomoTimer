@@ -438,8 +438,13 @@ h1, h2, p, hr {
         margin-top: 18%;
     }
 
+    .password-container {
+        width: 250px;
+        margin-left: 40%;
+    }
+
     .show-password {
-        margin: 4% 0% 0% 25%;
+        margin: 4% 0% 0% 0%;
     }
 
     .sign-in, .sign-up {
