@@ -5,6 +5,29 @@ const mobileButtons = document.querySelectorAll('.mobile-button');
 const signInForm = container.querySelector('.sign-in');
 const signUpForm = container.querySelector('.sign-up');
 
+// Função para exibir/ocultar a senha nos formulários
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleciona todos os botões de mostrar senha
+    const showPasswordButtons = document.querySelectorAll('.show-password');
+
+    showPasswordButtons.forEach(button => {
+        button.onclick = function() {
+            // Encontra o input de senha imediatamente anterior ao botão
+            const password = this.previousElementSibling;
+
+            if (password && password.classList.contains('password-input')) {
+                if (password.type === 'password') {
+                    password.type = 'text';
+                    this.src = '../assets/svg/eye-closed.svg';
+                } else {
+                    password.type = 'password';
+                    this.src = '../assets/svg/eye-open.svg';
+                }
+            }
+        };
+    });
+});
+
 // Verifica se é mobile
 const isMobile = () => window.innerWidth <= 610;
 

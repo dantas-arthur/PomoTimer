@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes">
     <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/x-icon" href="../assets/icon/favicon.ico">
     <meta name="theme-color" content="#F0F4EF">
@@ -51,7 +51,10 @@
                         <span>or use your personal email</span>
                         <input type="text" placeholder="Name">
                         <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Password">
+                        <div class="password-container">
+                            <input class="password-input" type="password" placeholder="Password">
+                            <img class="show-password" src="../assets/svg/eye-open.svg" alt="show-password">
+                        </div>
                         <button>Sign Up</button>
                         <button class="mobile-button login-mobile">Already have an acoount?</button>
                     </form>
@@ -67,7 +70,10 @@
                         </div>
                         <span>or use your email password</span>
                         <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Password">
+                        <div class="password-container">
+                            <input class="password-input" type="password" placeholder="Password">
+                            <img class="show-password" src="../assets/svg/eye-open.svg" alt="show-password">
+                        </div>
                         <button>Sign In</button>
                         <a href="#">Forget Your Password?</a>
                         <button class="mobile-button register-mobile">Don't have an acoount?</button>

@@ -125,7 +125,7 @@ h1, h2, p, hr {
     width: 1200px;
     max-width: 100%;
     min-height: 650px;
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 .container p {
@@ -134,6 +134,19 @@ h1, h2, p, hr {
     letter-spacing: 0.3px;
     margin: 20px 0;
     color: var(--color1);
+}
+
+.password-container {
+    margin-right: 50%;
+}
+
+.show-password {
+    width: 32px;
+    cursor: pointer;
+    transition: ease-in-out;
+    position: absolute;
+    margin: 2.5% 0% 0% 35%;
+    opacity: 50%;
 }
 
 .sign-in-header {
@@ -190,6 +203,7 @@ h1, h2, p, hr {
 
 .container input {
     background-color: var(--color1);
+    color: var(--color3);
     border: none;
     margin: 8px 0;
     padding: 10px 15px;
@@ -396,7 +410,7 @@ h1, h2, p, hr {
 
     #check:checked ~ .menu {right: 0;}
 
-    /* Body, font-size, footer and other elements*/
+    /* Body, font-size, footer and other elements */
 
     h1 {
         font-size: 2rem;
@@ -410,10 +424,8 @@ h1, h2, p, hr {
         font-size: 1rem;
     }
 
-    /* Logo and website name */
-
     #logo {
-        width: 64px;
+        width: 50px;
     }
 
     /* Sign-in/Sign-up container */
@@ -423,8 +435,11 @@ h1, h2, p, hr {
         border-radius: 0px;
         width: 360px;
         min-height: 550px;
-        margin-top: 25%;
-        position: relative; /* Container como referência para os absolutos */
+        margin-top: 18%;
+    }
+
+    .show-password {
+        margin: 4% 0% 0% 25%;
     }
 
     .sign-in, .sign-up {
@@ -432,13 +447,13 @@ h1, h2, p, hr {
         position: absolute;
         top: 0;
         left: 0;
-        display: none; /* Escondidos por padrão no mobile */
+        display: none;
     }
 
     .sign-in.visible, .sign-up.visible {
-        display: block; /* Mostra apenas o formulário com 'visible' */
-        opacity: 1; /* Sobrescreve opacity: 0 do .sign-up */
-        z-index: 2; /* Garante que fique acima */
+        display: block;
+        opacity: 1;
+        z-index: 2;
     }
 
     .container .mobile-button {
