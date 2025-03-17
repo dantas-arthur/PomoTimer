@@ -13,9 +13,11 @@
 
 <h1>To-do list</h1>
 
-- [x] Estilizar o site;
-- [x] Criar a lógica do timer;
-- [x] Criar a aba "Sobre";
-- [x] Criar lógica e a aba do "Histórico";
-- [ ] Criar a lógica para vincular contas;
-- [x] Publicar o projeto no GitHub Pages e Vercel.
+- [x] Estilizar o site
+- [x] Criar a lógica do timer
+- [x] Criar a aba "Sobre"
+- [x] Criar lógica e a aba do "Histórico"
+- [x] Publicar o projeto no Vercel
+- [ ] Criar a lógica para vincular contas
+- [ ] Criar o sistema de leaderboard
+- [ ] Gerar gráficos de desempenho semanal, mensal e anual
