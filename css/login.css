@@ -389,14 +389,11 @@ h1, h2, p, hr {
 
     .mobile-login {
         display: block;
-        margin-left: 37%;
-        margin-right: 3%;
+        margin-left: 30%;
+        margin-right: 2%;
         cursor: pointer;
     }
 
-    .open-menu {
-        margin: 0% 2% 0% 0%;
-    }
 
     .close-menu {
         position: absolute;
