@@ -6,7 +6,7 @@
 }
 
 ::selection {
-    background-color: var(--color2);
+    background-color: var(--color3);
     color: var(--color1);
 }
 

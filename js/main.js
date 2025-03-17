@@ -13,7 +13,7 @@ let myInterval;
 let isPaused = false;
 var totalSeconds = 0;
 
-// Function to save the session data on localStorage
+// Função para salvar o histórico
 function saveSessionData(type, minutes, seconds) {
   let sessionData = {
       type: type,
@@ -72,6 +72,7 @@ var appTimer = (remainingSeconds = null) => {
           saveSessionData("Pomodoro", minutesAmount, secondsAmount);
       }
       totalSeconds--;
+      document.title = `${String(minutesLeft).padStart(2, '0')}:${String(secondsLeft).padStart(2, '0')} | PomoTimer`;
   };
 
   updateSeconds();
@@ -184,3 +185,4 @@ for (i = 0; i < coll.length; i++) {
         }
     });
 }
+
