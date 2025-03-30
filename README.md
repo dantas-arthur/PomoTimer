@@ -4,7 +4,7 @@
 </div>
 <p align="center">Site pomodoro para auxiliar na produtividade.</p>
 
-<h1>Showcase</h1>
+<h1>Preview</h1>
 <div>
  <img src="assets/screenshot/Screenshot_1.png">
  <img src="assets/screenshot/Screenshot_2.png">
